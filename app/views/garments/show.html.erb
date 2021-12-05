@@ -1,0 +1,25 @@
+
+<p>
+  <strong>Name:</strong>
+  <%= @garment.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @garment.description %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%= @garment.price %>
+</p>
+<p>
+  <strong>Color:</strong>
+  <%= @garment.color %>
+</p>
+<p>
+  <strong>Image:</strong>
+  <%= @garment.image %>
+</p>
+
+<%= link_to 'Edit', edit_category_garment_path(@garment) %> |
+<%= link_to 'Back', category_path %>
+
