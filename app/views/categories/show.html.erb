@@ -4,5 +4,29 @@
   <%= @category.title %>
 </p>
 
+<h2>Add a garment:</h2>
+<%= form_with(model: [ @article, @article.garments.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+  <p>
+    <%= form.label :price %><br>
+    <%= form.text_area :price %>
+  </p>
+  <p>
+    <%= form.label :size %><br>
+    <%= form.text_area :size %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
+
