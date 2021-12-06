@@ -1,0 +1,13 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @category.title %>
+</p>
+
+<h2>Garments</h2>
+<%= render @category.garments %>
+
+<%= link_to 'New', new_category_garment_path(@category, @category.garments.build) %> |
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>
+
