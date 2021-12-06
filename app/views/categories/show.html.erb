@@ -1,15 +1,12 @@
 
-<p>
-  <strong>Title:</strong>
+<p class="titlePage" id="titleCategory">
   <%= @category.title %>
 </p>
 
-<h2>Garments</h2>
-<%= render @category.garments %>
+<div class="listCards">
+  <%= render @category.garments %>
+</div>
+<%= link_to 'Back', categories_path, class: "editBackLink" %>
 
-<h2>Add a garment:</h2>
+<p class="titlePage" id="titleForm">Добавить предмет</p>
 <%= render 'garments/form' %>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
-

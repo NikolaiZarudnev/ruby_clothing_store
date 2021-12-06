@@ -15,13 +15,13 @@
     </div>
   <% end %>
  
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
- 
-  <p>
-    <%= form.submit %>
-  </p>
+  <div class="editForm">
+    <p>
+      <%= form.text_field :title, class: "editTextField" %>
+    </p>
+  </div>
+
+  <%= form.submit class: "submitForm" %>
+
  
 <% end %>
