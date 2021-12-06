@@ -1,25 +1,27 @@
-<%= form_with(model: [ @category, @category.garments.build ]) do |form| %>
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
-  <p>
-    <%= form.label :description %><br>
-    <%= form.text_area :description %>
-  </p>
-  <p>
-    <%= form.label :price %><br>
-    <%= form.text_area :price %>
-  </p>
-  <p>
-    <%= form.label :color %><br>
-    <%= form.text_area :color %>
-  </p>
-  <p>
-    <%= form.label :image %><br>
-    <%= form.text_area :image %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<div class="editForm">
+  <%= form_with(model: [ @category, @category.garments.build ]) do |form| %>
+    <p>
+      <%= form.label :name %><br>
+      <%= form.text_field :name, class: "editTextField" %>
+    </p>
+    <p>
+      <%= form.label :description %><br>
+      <%= form.text_area :description, class: "editTextField" %>
+    </p>
+    <p>
+      <%= form.label :price %><br>
+      <%= form.text_area :price, class: "editTextField" %>
+    </p>
+    <p>
+      <%= form.label :color %><br>
+      <%= form.text_area :color, class: "editTextField" %>
+    </p>
+    <p>
+      <%= form.label :image %><br>
+      <%= form.text_area :image, class: "editTextField" %>
+    </p>
+    <p>
+      <%= form.submit class: "submitForm" %>
+    </p>
+  <% end %>
+</div>
