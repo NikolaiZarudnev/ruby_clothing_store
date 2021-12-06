@@ -2,11 +2,11 @@
 <h1>WELCOME</h1>
 
 <% if user_signed_in?() %>
-  <p>
-    <%= current_user.name %><br>
-  </p>
+  <%= current_user.name %><br>
+  <%= link_to 'LOG OUT', session_path, data: { method: :delete } %>
 <% else %>
   <%= link_to 'SIGN UP', new_user_path %>
+  <%= link_to 'LOG IN', new_session_path %>
 <% end %>
 
 <%= render 'categories/list' %>

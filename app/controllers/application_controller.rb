@@ -9,5 +9,12 @@ class ApplicationController < ActionController::Base
     current_user.present?
   end
 
-  helper_method :current_user, :user_signed_in?
+  def log_in(user)
+    session[:user_id] = user.id
+  end
+  def log_out()
+    session.delete :user_id
+    #@current_user = nil
+  end
+  helper_method :current_user, :user_signed_in?, :log_in
 end
