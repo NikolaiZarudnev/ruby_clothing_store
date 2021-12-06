@@ -1,19 +1,15 @@
 
-<h1>Listing Categories</h1>
-<%= link_to 'New category', new_category_path %>
-<table>
-  <tr>
-    <th>Title</th>
-    <th colspan="3"></th>
-  </tr>
-    <% @categories.each do |category| %>
-        <tr>
-        <td><%= category.title %></td>
-        <td><%= link_to 'Show', category_path(category) %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category_path(category),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-    <% end %>
-</table>
+<p class="titlePage">Список категорий</p>
+
+<div class="listCategories">
+  <%= link_to 'Добавить категорию', new_category_path, class: "categorieOptions" %>
+      <% @categories.each do |category| %>
+        <div class="categorie">
+        <%= link_to category.title, category_path(category), class: "linkCategorie" %>
+        </div>
+        <%= link_to 'Редактировать', edit_category_path(category), class: "categorieOptions" %>
+        <%=  link_to 'Убрать категорию', category_path(category), class: "categorieOptions",
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %>
+      <% end %>
+</div>

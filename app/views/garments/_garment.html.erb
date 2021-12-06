@@ -1,15 +1,14 @@
-<p>
-  <strong>Name:</strong>
-  <%= garment.name %>
-</p>
-<p>
-  <strong>Image:</strong>
-  <%= garment.image %>
-</p>
-<%= link_to 'Show', [garment.category, garment] %>
-<%= link_to 'Edit', edit_category_garment_path(garment) %>
-<p>
-  <%= link_to 'Destroy Garment', [garment.category, garment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-</p>
+<div class="cart">
+  <p>
+    <%= garment.image %>
+  </p>
+  <p>
+    <strong>Название:</strong>
+    <%= garment.name %>
+  </p>
+  <div><%= link_to 'Посмотреть', [garment.category, garment], class: "showGarmentLink"  %></div>
+  <%= link_to 'Редактировать', edit_category_garment_path(garment), class: "categorieOptions"  %>
+  <%= link_to 'Убрать', [garment.category, garment], class: "categorieOptions",
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+</div>
