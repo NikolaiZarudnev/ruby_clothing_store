@@ -1,4 +1,3 @@
-
 <p class="titlePage" id="titleCategory">
   <%= @category.title %>
 </p>
@@ -6,9 +5,5 @@
 <div class="listCards">
   <%= render @category.garments %>
 </div>
-<%= link_to 'New', new_category_garment_path(@category, @category.garments.build) %> |
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path, class: "editBackLink" %>
-
-<p class="titlePage" id="titleForm">Добавить предмет</p>
-<%= render 'garments/form' %>
+<%= link_to 'Добавить новый предмет', new_category_garment_path(@category, @category.garments.build), class: "editBackLink", id: "addGarment" %>
+<%= link_to 'Назад', categories_path, class: "editBackLink" %>
