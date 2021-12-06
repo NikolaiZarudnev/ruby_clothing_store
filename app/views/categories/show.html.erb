@@ -6,6 +6,8 @@
 <div class="listCards">
   <%= render @category.garments %>
 </div>
+<%= link_to 'New', new_category_garment_path(@category, @category.garments.build) %> |
+<%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path, class: "editBackLink" %>
 
 <p class="titlePage" id="titleForm">Добавить предмет</p>
