@@ -7,6 +7,10 @@ class GarmentsController < ApplicationController
     @category = Category.find(params[:category_id])
     @garment = @category.garments.find(params[:id])
   end
+  def new
+    @category = Category.find(params[:category_id])
+    @garment = Garment.new
+  end
   def create
     @category = Category.find(params[:category_id])
     @garment = @category.garments.create(garment_params)
