@@ -2,7 +2,7 @@ AllCops:
   NewCops: enable
   Exclude:
     - 'bin/*'
-    - 'spec/**/*_spec.rb'
+    - 'spec/*'
 
 Style/Documentation:
   Enabled: false
