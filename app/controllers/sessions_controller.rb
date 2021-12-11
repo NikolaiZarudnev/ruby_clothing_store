@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
-  def new
-  end
+  def new; end
 
   def create
     user = User.find_by email: params[:email]
@@ -16,10 +15,10 @@ class SessionsController < ApplicationController
     log_out
     redirect_to root_path
   end
+
   private
+
   def session_params
     params.require(:user).permit(:email, :name, :password)
   end
 end
-
-

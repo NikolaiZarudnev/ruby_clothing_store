@@ -1,4 +1,3 @@
-
 Rails.application.routes.draw do
   get 'categories/index'
   resource :session, only: %i[new create destroy]
