@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     resources :garments
   end
 
-  root 'categories#index'
+  root 'home#index'
 end
