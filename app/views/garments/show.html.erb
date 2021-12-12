@@ -22,5 +22,5 @@
   </p>
 
   <%= link_to 'Back', category_path(@category), class: "editBackLink" %>
-  <%= link_to 'Edit', edit_category_garment_path(@garment), class: "categorieOptions" %>
+  <%= link_to 'Edit', edit_category_garment_path(@garment), class: "categorieOptions" if user_signed_in?() %>
 </div>

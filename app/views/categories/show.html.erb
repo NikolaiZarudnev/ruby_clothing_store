@@ -5,5 +5,6 @@
 <div class="listCards">
   <%= render @category.garments %>
 </div>
-<%= link_to 'Добавить новый предмет', new_category_garment_path(@category, @category.garments.build), class: "editBackLink", id: "addGarment" %>
+<%= link_to 'Добавить новый предмет', new_category_garment_path(@category, @category.garments.build),
+    class: "editBackLink", id: "addGarment" if user_signed_in?() %>
 <%= link_to 'Назад', categories_path, class: "editBackLink" %>
