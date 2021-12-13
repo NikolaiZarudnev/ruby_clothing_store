@@ -1,0 +1,23 @@
+
+<div class="garment">
+  <p>
+    <%= image_tag "/assets/" + @garments.image, class: "garmentImg"%>
+    <%= @garments.image %>
+  </p>
+  <p>
+    <strong>Name:</strong>
+    <%= @garments.name %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= @garments.description %>
+  </p>
+  <p>
+    <strong>Price:</strong>
+    <%= @garments.price %>
+  </p>
+  <p>
+    <strong>Color:</strong>
+    <%= @garments.color %>
+  </p>
+</div>

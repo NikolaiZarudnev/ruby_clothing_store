@@ -1,0 +1,10 @@
+<%= form_tag categories_index_path, method: "GET" do %>
+  <%= label_tag :search_by_name %>
+  <%= text_field_tag :search_by_name, params[:search_by_name] %>
+  <%= label_tag :search_by_color %>
+  <%= text_field_tag :search_by_color, params[:search_by_color] %>
+  <%= label_tag :search_by_price %>
+  <%= text_field_tag :search_by_price, params[:search_by_price] %>
+  <%= submit_tag "Search" %>
+
+<% end %>
