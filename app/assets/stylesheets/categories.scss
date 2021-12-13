@@ -180,17 +180,20 @@ body {
 }
 
 .garment{
-    color:rgb(233, 222, 222);
+    color: #dedede;
     background-color: #474747;
-    display: flex;
-    flex-direction: column;
-
-    margin: 7pc;
+    
+    max-width: 835px;
+    min-width: min-content;
+    
+    margin: 100px;
     padding: 78px;
 }
 
 .garmentInfo{
-
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
 }
 
 .garmentImg{

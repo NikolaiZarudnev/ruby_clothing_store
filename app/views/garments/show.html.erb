@@ -1,26 +1,30 @@
 
-<div class="garment">
-  <p>
-    <%= image_tag "/assets/" + @garment.image, class: "garmentImg"%>
-    <%= @garment.image %>
-  </p>
-  <p>
-    <strong>Name:</strong>
-    <%= @garment.name %>
-  </p>
-  <p>
-    <strong>Description:</strong>
-    <%= @garment.description %>
-  </p>
-  <p>
-    <strong>Price:</strong>
-    <%= @garment.price %>
-  </p>
-  <p>
-    <strong>Color:</strong>
-    <%= @garment.color %>
-  </p>
+<div style="display: flex; justify-content: center;">
+  <div class="garment">
+    <div class="garmentInfo">
+      <%= image_tag "/assets/" + @garment.image, class: "garmentImg"%>
+      <%= @garment.image %>
+      <div style="margin-left: 24px; width: 200px;">
+        <p>
+          <strong>Name:</strong>
+          <%= @garment.name %>
+        </p>
+        <p>
+          <strong>Description:</strong>
+          <%= @garment.description %>
+        </p>
+        <p>
+          <strong>Price:</strong>
+          <%= @garment.price %>
+        </p>
+        <p>
+          <strong>Color:</strong>
+          <%= @garment.color %>
+        </p>
+      </div>
+    </div>
 
-  <%= link_to 'Back', category_path(@category), class: "editBackLink" %>
-  <%= link_to 'Edit', edit_category_garment_path(@garment), class: "categorieOptions" if user_signed_in?() %>
+    <%= link_to 'Back', category_path(@category), class: "editBackLink" %>
+    <%= link_to 'Edit', edit_category_garment_path(@garment), class: "categorieOptions" if user_signed_in?() %>
+  </div>
 </div>
