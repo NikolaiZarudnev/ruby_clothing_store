@@ -2,8 +2,10 @@
 <p class="titlePage" id="titleCategory">WELCOME</p>
 
 <% if user_signed_in?() %>
-  <%= current_user.name %><br>
-  <%= link_to 'LOG OUT', session_path, data: { method: :delete } %>
+  <div class="logUser">
+    <%= current_user.name %><br>
+  </div>
+  <%= link_to 'LOG OUT', session_path, data: { method: :delete } , class: "linkCategorie", id: "logOut"%>
 <% else %>
   <div class="logButtons">
     <%= link_to 'SIGN UP', new_user_path, class: "linkCategorie" %>

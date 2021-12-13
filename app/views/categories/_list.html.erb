@@ -5,7 +5,7 @@
   <%= link_to 'Добавить категорию', new_category_path, class: "categorieOptions" %>
       <% @categories.each do |category| %>
         <div class="categorie">
-        <%= link_to category.title, category_path(category), class: "linkCategorie", id: "pink" %>
+        <%= link_to category.title, category_path(category), class: "linkCategorie"%>
         </div>
         <%= link_to 'Редактировать', edit_category_path(category), class: "categorieOptions" %>
         <%=  link_to 'Убрать категорию', category_path(category), class: "categorieOptions",
