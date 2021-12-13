@@ -2,45 +2,55 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
   end
+  
+  def search
+    @garments = Garment.all
+    @garments = @garments.where("name LIKE ?", "%#{params[:q]}%")
+  end
 
   def show
     @category = Category.find(params[:id])
   end
 
   def new
-    @category = Category.new
+    if user_signed_in?()
+      @category = Category.new
+    else
+      redirect_to categories_path
+    end
   end
 
   def edit
-    @category = Category.find(params[:id])
+    if user_signed_in?()
+      @category = Category.find(params[:id])
+    else
+      redirect_to categories_path
+    end
   end
 
   def create
-    # render plain: params[:category].inspect
-    @category = Category.new(category_params)
-
-    if @category.save
-      redirect_to @category
+    if user_signed_in?()
+      @category = Category.new(category_params)
+      category_save
     else
-      render 'new'
+      redirect_to categories_path
     end
-    # redirect_to @category
   end
 
   def update
-    @category = Category.find(params[:id])
-
-    if @category.update(category_params)
-      redirect_to @category
+    if user_signed_in?()
+      @category = Category.find(params[:id])
+      category_update
     else
-      render 'edit'
+      redirect_to categories_path
     end
   end
 
   def destroy
-    @category = Category.find(params[:id])
-    @category.destroy
-
+    if user_signed_in?()
+      @category = Category.find(params[:id])
+      @category.destroy
+    end
     redirect_to categories_path
   end
 
@@ -48,5 +58,19 @@ class CategoriesController < ApplicationController
 
   def category_params
     params.require(:category).permit(:title)
+  end
+  def category_save()
+    if @category.save
+      redirect_to @category
+    else
+      render 'new'
+    end
+  end
+  def category_update()
+    if @category.update(category_params)
+      redirect_to @category
+    else
+      render 'edit'
+    end
   end
 end

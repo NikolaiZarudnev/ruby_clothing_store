@@ -7,8 +7,8 @@
     <%= garment.name %>
   </p>
   <div><%= link_to 'Посмотреть', [garment.category, garment], class: "showGarmentLink"  %></div>
-  <%= link_to 'Редактировать', edit_category_garment_path(garment), class: "categorieOptions"  %>
+  <%= link_to 'Редактировать', edit_category_garment_path(garment.category, garment), class: "categorieOptions" if user_signed_in?() %>
   <%= link_to 'Убрать', [garment.category, garment], class: "categorieOptions",
               method: :delete,
-              data: { confirm: 'Are you sure?' } %>
+              data: { confirm: 'Are you sure?' } if user_signed_in?() %>
 </div>

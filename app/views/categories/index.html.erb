@@ -1,14 +1,11 @@
+<div class = "titlePage", id = "titleCategory">
+    <%= link_to 'На главную', root_path%>
+</div>
 
-<p class="titlePage" id="titleCategory">WELCOME</p>
+<form action="/search">
+    <input name="q" type="text" placeholder="Search" aria-label="Search">
+    <button type="submit">Search</button>
+</form>
 
-<% if user_signed_in?() %>
-  <%= current_user.name %><br>
-  <%= link_to 'LOG OUT', session_path, data: { method: :delete } %>
-<% else %>
-  <div class="logButtons">
-    <%= link_to 'SIGN UP', new_user_path, class: "linkCategorie" %>
-    <%= link_to 'LOG IN', new_session_path, class: "linkCategorie" %>
-  </div>
-<% end %>
-
+<br>
 <%= render 'categories/list' %>
