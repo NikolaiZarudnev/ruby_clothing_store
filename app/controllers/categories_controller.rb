@@ -2,6 +2,11 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
   end
+  
+  def search
+    @garments = Garment.all
+    @garments = @garments.where("name LIKE ?", "%#{params[:q]}%")
+  end
 
   def show
     @category = Category.find(params[:id])
