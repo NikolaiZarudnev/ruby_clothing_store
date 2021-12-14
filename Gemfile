@@ -38,6 +38,7 @@ group :development, :test do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
   gem 'simplecov'
+  gem 'steep'
 end
 
 group :development do
