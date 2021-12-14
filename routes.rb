@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'categories/index'
-  get 'search', to: "categories#search"
+  get 'search', to: 'categories#search'
 
   resource :session, only: %i[new create destroy]
   resources :users, only: %i[new create]
