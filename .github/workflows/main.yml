@@ -21,5 +21,4 @@ jobs:
         run: bundle exec steep check
       - name: RSpec
         run: |
-          rails server
           bundle exec rspec
