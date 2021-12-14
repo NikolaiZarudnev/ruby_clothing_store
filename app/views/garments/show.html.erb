@@ -1,26 +1,22 @@
-
+<div style="display: flex; justify-content: center;">
 <div class="garment">
-  <p>
-    <%= image_tag "/assets/" + @garment.image, class: "garmentImg"%>
-    <%= @garment.image %>
-  </p>
-  <p>
-    <strong>Name:</strong>
-    <%= @garment.name %>
-  </p>
-  <p>
-    <strong>Description:</strong>
-    <%= @garment.description %>
-  </p>
-  <p>
-    <strong>Price:</strong>
-    <%= @garment.price %>
-  </p>
-  <p>
-    <strong>Color:</strong>
-    <%= @garment.color %>
-  </p>
+  <div class="garmentInfo">
+    <div style="display: flex; flex-direction: column;">
+      <%= image_tag "/assets/" + @garment.image, class: "garmentImg"%>
+      <%= @garment.image %>
+    </div>
+    <p>
+      <strong>Name:</strong>
+      <%= @garment.name %><br><br>
+      <strong>Description:</strong>
+      <%= @garment.description %><br><br>
+      <strong>Price:</strong>
+      <%= @garment.price %><br><br>
+      <strong>Color:</strong>
+      <%= @garment.color %>
+    </p>
+  </div>
 
-  <%= link_to 'Back', category_path(@category), class: "editBackLink" %>
-  <%= link_to 'Edit', edit_category_garment_path(@category, @garment), class: "categorieOptions" if user_signed_in?() %>
+  <%= link_to 'Назад', category_path(@category), class: "editBackLink" %>
+  <%= link_to 'Редактировать', edit_category_garment_path(@category, @garment), class: "categorieOptions" if user_signed_in?() %>
 </div>

@@ -42,6 +42,12 @@ body {
     text-align: center;
 }
 
+#listCatButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .categorie{
     height: 5em;
     display: flex;
@@ -67,7 +73,6 @@ body {
 
     background-color: white;
    
-
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -114,7 +119,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     height: 49px;
 
-
     transition: background-color 0.2s ease;
 }
 
@@ -128,16 +132,15 @@ body {
 }
 
 .cart{
-    width: 20%;
-    
-    background-color: rgba(219, 235, 228, 0.178);
+    width: 324px;
+    margin: 37px;
 }
 
 .listCards{
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    margin: 4pc 0 7pc 0;
+    flex-wrap: wrap;
+    margin: 37px 90px;
 
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -147,7 +150,7 @@ body {
     align-items: center;
     justify-content: center;
 
-    background: #303030;
+    background: #414141;
     text-decoration: none;
     color: rgb(233, 222, 222);
 
@@ -179,17 +182,35 @@ body {
 }
 
 .garment{
-    color:rgb(233, 222, 222);
+    max-width: max-content;
+    min-width: min-content;
+    color: #e9dede;
     background-color: #474747;
+    margin: 4pc;
+    padding: 44px;
+}
+
+.garmentInfo{
     display: flex;
-    flex-direction: column;
-    margin: 7pc;
-    padding: 78px;
+    flex-wrap: wrap;
+
+    margin-bottom: 24px;
 }
 
 .garmentImg{
+    width: 480px;
+    height: 320px;
+}
+
+.garment p {
+    margin: 24px;
+    width: 17em;
+    min-width: min-content;
+}
+
+.miniImg{
     width: 100%;
-    height: 34pc;
+    height: 320px;
 }
 
 .logButtons{
@@ -209,4 +230,66 @@ body {
 #logOut{
     height: 4em;
     width: 10em;
+}
+
+.topBarLink {
+    position: absolute;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    height: 96px;
+    width: 10%;
+}
+
+#backLink {
+    transform: rotate(180deg);
+
+    background-color: #534242;
+    transition: background-color 0.2s ease;
+}
+
+#addLink {
+    right: 0;
+    background-color: #3a4259;
+    transition: background-color 0.2s ease;
+}
+
+#addLink:hover {
+    background-color: #3a4c84;
+}
+
+#backLink:hover {
+    background-color: #82464e;
+}
+
+.searcher {
+    position: absolute;
+    top: 34px;
+    right: 60px;
+}
+
+.searcherField {
+    background-color: #858585;
+
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+
+.searcherField:focus{
+    background-color: #cacaca;
+}
+
+#searchButton{
+    cursor: pointer;
+
+    background-color: #4861a6;
+    color: white;
+}
+
+#searchButton:hover {
+    background-color: #395ec4;
 }
