@@ -1,12 +1,40 @@
+
 <div class="editForm">
-  <%= form_with(model: [ @category, @category.garments.build ]) do |form| %>
+  <%= form_with model: [ @category, @category.garments.build ], local: true do |form| %>
+    <% if @category.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@category.errors.count, "error") %> prohibited
+          this category from being saved:
+        </h2>
+        <ul>
+          <% @category.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <% if @category.garments.build.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@category.garments.build.errors.count, "error") %> prohibited
+          this category from being saved:
+        </h2>
+        <ul>
+          <% @category.garments.build.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
     <p>
       <%= form.label :name %><br>
       <%= form.text_field :name, class: "editTextField" %>
     </p>
     <p>
       <%= form.label :description %><br>
-      <%= form.text_area :description, class: "editTextField" %>
+      <%= form.text_field :description, class: "editTextField" %>
     </p>
     <p>
       <%= form.label :price %><br>
@@ -14,11 +42,11 @@
     </p>
     <p>
       <%= form.label :color %><br>
-      <%= form.text_area :color, class: "editTextField" %>
-    </p>
+      <%= form.select :color, ['White', 'Black', 'Red'], class: "editTextField" %>
+    </p>  
     <p>
       <%= form.label :image %><br>
-      <%= form.text_area :image, class: "editTextField" %>
+      <%= form.file_field :image, class: "editTextField" %>
     </p>
     <p>
       <%= form.submit class: "submitForm" %>
