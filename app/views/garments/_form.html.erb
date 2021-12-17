@@ -38,7 +38,7 @@
     </p>
     <p>
       <%= form.label :price %><br>
-      <%= form.text_field :price, class: "editTextField" %>
+      <%= form.number_field :price, min: 0, step: :any, class: "editTextField" %>
     </p>
     <p>
       <%= form.label :color %><br>
