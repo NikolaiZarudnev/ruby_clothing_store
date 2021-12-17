@@ -15,11 +15,15 @@ class GarmentsController < ApplicationController
   def create
     @category = Category.find(params[:category_id])
     p '-----------------------------------------------------------------------'
-    uploaded_io = garment_params["image"]
-    File.open(Rails.root.join('app', 'assets', 'images', 'garment_img', uploaded_io.original_filename), 'wb') do |file|
-      file.write(uploaded_io.read)
+    if params['garment']['image'] == nil then params['garment']['image'] = 'none.jpg'
+    else
+      uploaded_io = garment_params["image"]
+      File.open(Rails.root.join('app', 'assets', 'images', 'garment_img', uploaded_io.original_filename), 'wb') do |file|
+        file.write(uploaded_io.read)
+      end
+      params['garment']['image'] = uploaded_io.original_filename
     end
-    params['garment']['image'] = uploaded_io.original_filename
+    p params
     p '-----------------------------------------------------------------------'
     @garment = @category.garments.create(garment_params)
     redirect_to category_path(@category)
@@ -28,8 +32,18 @@ class GarmentsController < ApplicationController
   def update
     @category = Category.find(params[:category_id])
     @garment = @category.garments.find(params[:id])
+    
+    if params['garment']['image'] != nil
+      uploaded_io = garment_params["image"]
+      File.open(Rails.root.join('app', 'assets', 'images', 'garment_img', uploaded_io.original_filename), 'wb') do |file|
+        file.write(uploaded_io.read)
+      end
+      params['garment']['image'] = uploaded_io.original_filename
+    end
 
     @garment.update(garment_params)
+
+    redirect_to category_path(@category)
     #  redirect_to @garment
     #else
      # render 'edit'

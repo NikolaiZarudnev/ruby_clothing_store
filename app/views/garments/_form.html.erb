@@ -1,6 +1,6 @@
 
 <div class="editForm">
-  <%= form_with model: [ @category, @category.garments.build ], local: true do |form| %>
+  <%= form_with model: [ @category, @garment ], local: true do |form| %>
     <% if @category.errors.any? %>
       <div id="error_explanation">
         <h2>
@@ -38,7 +38,7 @@
     </p>
     <p>
       <%= form.label :price %><br>
-      <%= form.text_area :price, class: "editTextField" %>
+      <%= form.text_field :price, class: "editTextField" %>
     </p>
     <p>
       <%= form.label :color %><br>
