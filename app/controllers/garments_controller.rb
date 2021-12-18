@@ -14,7 +14,6 @@ class GarmentsController < ApplicationController
   end
   def create
     @category = Category.find(params[:category_id])
-    p '-----------------------------------------------------------------------'
     if params['garment']['image'] == nil then params['garment']['image'] = 'none.jpg'
     else
       uploaded_io = garment_params["image"]
@@ -23,8 +22,6 @@ class GarmentsController < ApplicationController
       end
       params['garment']['image'] = uploaded_io.original_filename
     end
-    p params
-    p '-----------------------------------------------------------------------'
     @garment = @category.garments.create(garment_params)
     redirect_to category_path(@category)
   end
