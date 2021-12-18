@@ -82,6 +82,23 @@ body {
     text-align: center;
     padding: 5px;
     font-size: large;
+    width: 100%;
+}
+
+#garment_color {
+    background-color: #d9d9d9;
+    border: none;
+    width: 100%;
+    text-align: center;
+    margin-left: 20px;
+    height: 30px;
+}
+#garment_color:focus{
+    outline: none
+}
+#garment_color:hover{
+    background-color: #e9e9e9;
+    outline: none;
 }
 
 .editTextField:focus {
