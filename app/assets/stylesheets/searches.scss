@@ -1,3 +1,30 @@
 // Place all the styles related to the Searches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.searcher {
+    position: absolute;
+    top: 34px;
+    right: 60px;
+}
+
+.searcherField {
+    background-color: #858585;
+
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+
+.searcherField:focus{
+    background-color: #cacaca;
+}
+
+#searchButton{
+    cursor: pointer;
+    background-color: #4861a6;
+    color: white;
+}
+
+#searchButton:hover {
+    background-color: #395ec4;
+}
