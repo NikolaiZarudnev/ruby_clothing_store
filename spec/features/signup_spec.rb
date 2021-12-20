@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+require 'spec_helper'
 describe 'the sign up process', type: :feature do
   it 'sign @user up' do
     visit '/users/new'
