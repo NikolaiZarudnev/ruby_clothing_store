@@ -33,10 +33,6 @@ class GarmentsController < ApplicationController
     @garment.update(garment_params)
 
     redirect_to category_path(@category)
-    #  redirect_to @garment
-    # else
-    # render 'edit'
-    # end
   end
 
   def destroy
