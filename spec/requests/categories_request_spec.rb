@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'spec_helper'
+
 RSpec.describe 'Categories', type: :request do
   describe 'Request index' do
     subject = 'test'

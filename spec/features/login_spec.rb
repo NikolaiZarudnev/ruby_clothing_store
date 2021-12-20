@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'spec_helper'
+
 describe 'the log in process', type: :feature do
   before :each do
     User.create(email: 'user1@gmail.com', password: 'password', name: 'User1')
