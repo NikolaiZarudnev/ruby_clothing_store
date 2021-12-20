@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-require 'spec_helper'
-require 'rails_helper'
-=======
 require 'rails_helper'
 
->>>>>>> a8bcc6d5516663cd1fe371388743aada4834978a
 describe 'the search process', type: :feature do
   before :each do
     Garment.create(name: 'Abibas')
