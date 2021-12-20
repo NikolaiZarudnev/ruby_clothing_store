@@ -28,9 +28,7 @@ class GarmentsController < ApplicationController
     @category = Category.find(params[:category_id])
     @garment = @category.garments.find(params[:id])
 
-    unless params['garment']['image'].nil?
-      image_load
-    end
+    image_load unless params['garment']['image'].nil?
 
     @garment.update(garment_params)
 
@@ -57,7 +55,7 @@ class GarmentsController < ApplicationController
   def image_load
     uploaded_io = garment_params['image']
     File.open(Rails.root.join('app', 'assets', 'images', 'garment_img', uploaded_io.original_filename),
-    'wb') do |file|
+              'wb') do |file|
       file.write(uploaded_io.read)
     end
     params['garment']['image'] = uploaded_io.original_filename
