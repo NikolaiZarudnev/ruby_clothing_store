@@ -1,10 +1,9 @@
-<div class="titlePage" id="titleCategory">
-  <%= @category.title %>
-</div>
+<div class="titlePage" id="titleCategory"> <%= @category.title %> </div>
 
 <div class="listCards">
   <%= render @category.garments %>
 </div>
-<%= link_to 'Добавить новый предмет', new_category_garment_path(@category, @category.garments.build),
-    class: "editBackLink", id: "addGarment" if user_signed_in?() %>
-<%= link_to 'Назад', categories_path, class: "editBackLink" %>
+
+<%= link_to (image_tag "/assets/dev_img/add.ico"), new_category_garment_path(@category, @category.garments.build),
+    class: "topBarLink", id: "addLink" if user_signed_in?() %>
+<%= link_to (image_tag "/assets/dev_img/back.ico"), categories_path, class: "topBarLink", id: "backLink" %>

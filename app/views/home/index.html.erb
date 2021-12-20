@@ -1,6 +1,6 @@
 
 <% if user_signed_in?() %>
-  <p class="titlePage" id="titleCategory">WELCOME, <%= current_user.name %></p><br>
+  <div class="titlePage" id="titleCategory">WELCOME, <%= current_user.name %></div><br>
   <div class="logButtons">
     <%= link_to 'LOG OUT', session_path, data: { method: :delete }, class: "linkCategorie" %>
   </div>
@@ -11,6 +11,6 @@
       <%= link_to 'LOG IN', new_session_path, class: "linkCategorie" %>
     </div>
 <% end %>
-<div class = "listCards">
+<div class="listCards" id="listCatButton">
   <%= link_to 'Список товаров', categories_path, class: "linkCategorie" %>
 </div>

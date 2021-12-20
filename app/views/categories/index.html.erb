@@ -1,11 +1,8 @@
-<div class = "titlePage", id = "titleCategory">
-    <%= link_to 'На главную', root_path%>
-</div>
+<%= link_to 'На главную', root_path, class: "titlePage", id: "titleCategory" %>
 
-<form action="/search">
-    <input name="q" type="text" placeholder="Search" aria-label="Search">
-    <button type="submit">Search</button>
+<form action="/search", class="searcher">
+    <input name="q" type="text" placeholder="Поиск" aria-label="Поиск", class="searcherField">
+    <button type="submit", class="searcherField", id="searchButton">Поиск</button>
 </form>
 
-<br>
 <%= render 'categories/list' %>

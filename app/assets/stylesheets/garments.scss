@@ -1,18 +1,119 @@
 // Place all the styles related to the Garments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-// .editBackLink{
-//     display: flex;
-//     text-align: center;
-//     justify-content: center;
-//     align-items: center;
 
-//     text-decoration: none;
-//     color: black;
-//     background-color: #d9bcbc;
-//     font-family: Arial, Helvetica, sans-serif;
-//     height: 49px;
+.cart{
+    width: 324px;
+    margin: 37px;
+}
+
+.listCards{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 37px 90px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.showGarmentLink{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #414141;
+    text-decoration: none;
+    color: rgb(233, 222, 222);
+
+    width: 100%;
+    height: 40px;
+
+    transition: background-color 0.1s ease;
+}
+
+.showGarmentLink:hover{
+    background: #6f85ed;
+    color: white;
+}
 
 
-//     transition: background-color 0.2s ease;
-// }
+#titleForm{
+    height: 4em;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+#addGarment{
+    background-color: #bcc6d9;
+
+    transition: background-color 0.1s ease;
+}
+
+#addGarment:hover{
+    background-color: #84a8eb;
+}
+
+.garment{
+    max-width: max-content;
+    min-width: min-content;
+    color: #e9dede;
+    background-color: #474747;
+    margin: 4pc;
+    padding: 44px;
+}
+
+.garmentInfo{
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-bottom: 24px;
+}
+
+.garmentImg{
+    max-width: 480px;
+    max-height: 320px;
+}
+
+.garment p {
+    margin: 24px;
+    width: 17em;
+    min-width: min-content;
+}
+
+.miniImg{
+    width: 100%;
+    height: 320px;
+}
+
+.topBarLink {
+    position: absolute;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    height: 96px;
+    width: 10%;
+}
+
+#backLink {
+    transform: rotate(180deg);
+
+    background-color: #534242;
+    transition: background-color 0.2s ease;
+}
+
+#addLink {
+    right: 0;
+    background-color: #3a4259;
+    transition: background-color 0.2s ease;
+}
+
+#addLink:hover {
+    background-color: #3a4c84;
+}
+
+#backLink:hover {
+    background-color: #82464e;
+}

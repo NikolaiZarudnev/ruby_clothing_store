@@ -1,16 +1,14 @@
 <div class="cart">
   <div style="background-color: rgba(219, 235, 228, 0.178);">
-    <p>
-      <%= image_tag "/assets/" + garment.image, class: "garmentImg"%>
-    </p>
+    <%= image_tag "/assets/garment_img/" + garment.image, class: "garmentImg miniImg" %>
     <p>
       <strong>Название:</strong>
       <%= garment.name %>
     </p>
     <div><%= link_to 'Посмотреть', [garment.category, garment], class: "showGarmentLink"  %></div>
   </div>
-    <%= link_to 'Редактировать', edit_category_garment_path(garment.category, garment), class: "categorieOptions" if user_signed_in?() %>
-    <%= link_to 'Убрать', [garment.category, garment], class: "categorieOptions",
-                method: :delete,
-                data: { confirm: 'Are you sure?' } if user_signed_in?() %>
+  <%= link_to 'Редактировать', edit_category_garment_path(garment.category, garment), class: "categorieOptions" if user_signed_in?() %>
+  <%= link_to 'Убрать', [garment.category, garment], class: "categorieOptions",
+              method: :delete,
+              data: { confirm: 'Are you sure?' } if user_signed_in?() %>
 </div>
