@@ -1,5 +1,5 @@
 require 'spec_helper'
-
+require 'rails_helper'
 describe 'the search process', type: :feature do
   before :each do
     Garment.create(name: 'Abibas')
